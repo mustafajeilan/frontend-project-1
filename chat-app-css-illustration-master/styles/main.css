@@ -44,7 +44,7 @@ body {
 
 /* banner styles */
 .banner {
-  height: 90vh;
+  height: 800px;
   width: 50vw;
   position: absolute;
   top: 0;
@@ -54,12 +54,16 @@ body {
   z-index: -2;
 }
 
+.banner-left {
+  /* display: none; */
+  background: var(--clr--gradient-blue);
+}
 
 /* mobile container styles */
 .mobile-container {
   max-width: 100%;
   width: calc(92% * 320px);
-  height: 720px;
+  height: 780px;
   border: 10px solid var(--clr--white);
   background: var(--clr--white);
   min-height: fit-content;
@@ -127,7 +131,7 @@ header {
 .left-part {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 0.8rem;
 }
 
 .right-part {
@@ -149,11 +153,12 @@ header {
   height: 100%;
   position: absolute;
   top: 7rem;
-  padding: 0.6rem;
+  padding: 0.8rem;
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
-  font-size: 0.5rem;
+  font-size: 0.625rem;
+  border: 0.4px solid var(--clr--gray-chat);
 
   
   .question div{
@@ -248,6 +253,7 @@ header {
 .content-container {
   padding-top: 8rem;
   text-align: center;
+  margin-bottom: 1rem;
 
   h1 {
     color: var(--clr--purple-heading);
@@ -275,5 +281,57 @@ footer {
   a {
     text-decoration: none;
     color: cyan;
+  }
+}
+
+
+/* RESPONSIVENESS */
+/* Tablets */
+@media (min-width: 768px) {
+  .mobile-container {
+    max-width: 400px;
+    width: 100%;
+  }
+}
+
+@media (min-width: 1024px) { 
+  main { 
+    display: flex;
+    gap: 6rem;
+  }
+
+  .banner {
+    position: absolute;
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+    left: -220px;
+    height: 800px;
+  }
+
+  .banner-left {
+    display: block;
+    position: absolute;
+    left: -220px;
+    height: 600px;
+    z-index: -1;
+  }
+
+  .mobile-container {
+    top: 50px;
+    left: 200px;
+    height: 710px;
+  }
+
+  .content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    padding: 12rem;
+    text-align: start;
+    margin-top: 6rem;
+  }
+
+  footer {
+    display: none;
   }
 }
